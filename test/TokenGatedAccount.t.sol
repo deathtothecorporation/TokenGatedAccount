@@ -5,7 +5,7 @@ pragma solidity ^0.8.18;
 
 import "forge-std/Test.sol";
 import "openzeppelin/token/ERC721/ERC721.sol";
-import "src/TBARegistry.sol";
+import "src/TGARegistry.sol";
 import "src/TokenGatedAccount.sol";
 import "./TestUtils.sol";
 
@@ -24,16 +24,16 @@ contract SimpleNFT is ERC721 {
 contract TGATests is Test {
     SimpleNFT simpleNFT;
     TestUtils testUtils;
-    TBARegistry tbaRegistry;
-    TokenGatedAccount tbaAccountImpl;
+    TGARegistry tgaRegistry;
+    TokenGatedAccount tgaAccountImpl;
 
     function setUp() public {
         simpleNFT = new SimpleNFT();
 
-        tbaRegistry = new TBARegistry();
-        tbaAccountImpl = new TokenGatedAccount();
+        tgaRegistry = new TGARegistry();
+        tgaAccountImpl = new TokenGatedAccount();
 
-        testUtils = new TestUtils(tbaRegistry, tbaAccountImpl);
+        testUtils = new TestUtils(tgaRegistry, tgaAccountImpl);
     }
 
     function test_expectedPermissions() public {

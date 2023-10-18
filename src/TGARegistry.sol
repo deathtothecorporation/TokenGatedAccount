@@ -3,7 +3,7 @@ pragma solidity ^0.8.18;
 import "openzeppelin/utils/Create2.sol";
 import "./IERC6551Registry.sol";
 
-contract TBARegistry is IERC6551Registry {
+contract TGARegistry is IERC6551Registry {
     error InitializationFailed();
 
     struct TBA {
