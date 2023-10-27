@@ -132,7 +132,6 @@ contract TokenGatedAccount is IERC165, IERC1271, IERC6551Account, IERC6551Execut
     /**
      * @dev Checks if a specified signer is valid for this contract.
      * @param signer The address of the signer.
-     * @param calldata The calldata (unused).
      * @return The function selector if the signer is valid, 0 otherwise.
      */
     function isValidSigner(address signer, bytes calldata) external view returns (bytes4) {
@@ -161,7 +160,7 @@ contract TokenGatedAccount is IERC165, IERC1271, IERC6551Account, IERC6551Execut
     function isValidSignature(bytes32 hash, bytes memory signature)
         external
         view
-        returns (bytes4 magicValue)
+        returns (bytes4)
     {
         bool isValid = 
             SignatureChecker.isValidSignatureNow(owner(), hash, signature) ||
@@ -176,11 +175,6 @@ contract TokenGatedAccount is IERC165, IERC1271, IERC6551Account, IERC6551Execut
 
     /**
      * @dev Handles the receipt of a single ERC1155 token.
-     * @param address The sender address.
-     * @param address The receiver address.
-     * @param uint256 The ID of the token.
-     * @param uint256 The amount of tokens.
-     * @param bytes calldata The additional calldata.
      * @return The function selector.
      */
     function onERC1155Received(
@@ -195,11 +189,6 @@ contract TokenGatedAccount is IERC165, IERC1271, IERC6551Account, IERC6551Execut
 
     /**
      * @dev Handles the receipt of multiple ERC1155 tokens.
-     * @param address The sender address.
-     * @param address The receiver address.
-     * @param uint256[] calldata The IDs of the tokens.
-     * @param uint256[] calldata The amounts of tokens.
-     * @param bytes calldata The additional calldata.
      * @return The function selector.
      */
     function onERC1155BatchReceived(
@@ -215,10 +204,6 @@ contract TokenGatedAccount is IERC165, IERC1271, IERC6551Account, IERC6551Execut
 
     /**
      * @dev Handles the receipt of a single ERC721 token.
-     * @param address The sender address.
-     * @param address The receiver address.
-     * @param uint256 The ID of the token.
-     * @param bytes calldata The additional calldata.
      * @return The function selector.
      */
     function onERC721Received(
