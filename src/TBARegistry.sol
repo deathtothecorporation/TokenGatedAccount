@@ -31,9 +31,9 @@ contract TBARegistry is IERC6551Registry {
 
     /**
      * @dev Creates a new account with a bound non-fungible token using the provided parameters and returns the created account's address.
-     * @param _implementation Address of the contract implementation.
+     * @param _implementation Address of the TBA account implementation.
      * @param _chainId Chain ID on which the account is created.
-     * @param _tokenContract Address of the token contract.
+     * @param _tokenContract Address of the NFT contract.
      * @param _tokenId ID of the token to be bound to the new account.
      * @param _salt A value to modify the resulting address.
      * @param initData Initialization data to be called on the new account.
@@ -80,7 +80,7 @@ contract TBARegistry is IERC6551Registry {
 
     /**
      * @dev Computes and returns the address of the account with the provided parameters without actually creating the account.
-     * @param _implementation Address of the contract implementation.
+     * @param _implementation Address of the TBA account implementation.
      * @param _chainId Chain ID for which to compute the account address.
      * @param _tokenContract Address of the token contract.
      * @param _tokenId ID of the token for which to compute the account address.
@@ -103,7 +103,7 @@ contract TBARegistry is IERC6551Registry {
 
     /**
      * @dev Generates the creation code for an account with the provided parameters.
-     * @param _implementation Address of the contract implementation.
+     * @param _implementation Address of the TBA account implementation.
      * @param _chainId Chain ID on which the account is created.
      * @param _tokenContract Address of the token contract.
      * @param _tokenId ID of the token to be bound to the new account.

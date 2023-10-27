@@ -39,7 +39,7 @@ contract TokenGatedAccount is IERC165, IERC1271, IERC6551Account, IERC6551Execut
 
     /**
      * @dev Bonds a specified address to this contract.
-     * Note that we the bonded address can pass this bond on without authorization from owner().
+     * Note the bonded address can pass this bond on without authorization from owner().
      * @param _addressToBond The address to bond.
      */
     function bond(address _addressToBond) 
